@@ -1,3 +1,11 @@
+/* 
+this program takes in a csv file 
+first creates replicate_# directories 
+then it fills them up with empty files indicated by the csv file.
+
+
+*/
+
 #include <bits/stdc++.h>
 
 #include <iostream>
@@ -86,7 +94,7 @@ void create(vector<vector<string>> files){
 
                 ofstream tif;
                 tif.open(filename);
-                tif << file_content << "\n";
+                // tif << file_content << "\n";  // putting in file content is not needed.
                 tif.close();
             }
         }
@@ -212,11 +220,10 @@ int main() {
     vector<vector<string>> csv;
     csv = file_to_vector("06.11.2021_DG5248_GFP_OLLAS_MSP.csv");
     
-    create(csv); /* creates fake directories and 
+    create(csv);    /* creates fake directories and 
             correspoding files in them to organize*/
 
     sort_files(csv);
  
-
     return 0;
 }
